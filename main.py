@@ -36,7 +36,7 @@ app = FastAPI()
 class User(BaseModel):
     firstname: str = Field(min_length=2)
     lastname: str = Field(min_length=2)
-    birthday: str = Field("d{4}-\d\d-\d\d")
+    birthday: str = Field(regex=r"\d{4}-\d{2}-\d{2}")
     email: str = Field(max_length=32)
     address: str = Field(min_length=5)
 
